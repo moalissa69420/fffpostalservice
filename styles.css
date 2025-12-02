@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    width: 100vw;
+    background: #000;
+    color: #fff;
+}
+
+/* Scrolling Background Container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.background-scroll {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+}
+
+.background-scroll img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Navigation Bar - Exact Martine Rose layout */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    pointer-events: none;
+}
+
+/* All navigation links */
+.nav-link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    pointer-events: auto;
+    cursor: pointer;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+/* SHOP - far left, ~3% from left */
+.nav-shop {
+    left: 3%;
+}
+
+/* COLLECTIONS - ~60% from left */
+.nav-collections {
+    left: 60%;
+}
+
+/* ABOUT - ~69% from left (gap of ~9% from COLLECTIONS) */
+.nav-about {
+    left: 69%;
+}
+
+/* CART - far right, ~3% from right edge */
+.nav-cart {
+    right: 3%;
+}
+
+/* Logo Container - positioned where "Martine rose" text is (~28% from left) */
+.logo-container {
+    position: absolute;
+    left: 28%;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .nav-collections {
+        left: 58%;
+    }
+
+    .nav-about {
+        left: 68%;
+    }
+
+    .logo {
+        height: 90px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav-link {
+        font-size: 10px;
+    }
+
+    .nav-collections {
+        left: 55%;
+    }
+
+    .nav-about {
+        left: 66%;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    .logo-container {
+        left: 26%;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-link {
+        font-size: 9px;
+    }
+
+    .nav-shop {
+        left: 20px;
+    }
+
+    .nav-cart {
+        right: 20px;
+    }
+
+    .nav-collections {
+        left: 52%;
+    }
+
+    .nav-about {
+        left: 65%;
+    }
+
+    .logo {
+        height: 70px;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-collections,
+    .nav-about {
+        display: none;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .logo-container {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

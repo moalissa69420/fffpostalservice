@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+
+# Server
+server.py
+START_SERVER.sh
+/tmp/
+
+# Development files
+*.log
+.DS_Store
+
+# Keep source PDFs but ignore if too large (optional)
+# *.pdf
+
